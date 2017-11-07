@@ -12,6 +12,68 @@
 
 <body>
 
+  <div id="app" v-cloak>
+    <v-app>
+      <v-layout row>
+        <v-flex lg12 xs12 sm6>
+          <v-card>
+            <v-toolbar color="grey darken-4" dark>
+              <img src="diseno/logo.png">
+              <v-spacer></v-spacer>
+              <v-btn icon>
+                <v-icon color="green accent-4">search</v-icon>
+              </v-btn>
+            </v-toolbar>
+            <v-list two-line subheader>
+              <v-list-tile avatar v-for="item in songLista" v-bind:key="item.title" @click="">
+                <v-list-tile-avatar>
+                  <img v-bind:src="item.images[0].url">
+                </v-list-tile-avatar>
+                <v-list-tile-content>
+                  <v-list-tile-title>{{ item.name }}</v-list-tile-title>
+                  <v-list-tile-sub-title>total: {{ item.tracks.total }}</v-list-tile-sub-title>
+                </v-list-tile-content>
+
+                <v-btn fab dark small color="green accent-4" @click="ventana(item)">
+                  <v-icon color="grey darken-4">search</v-icon>
+                </v-btn>
+
+              </v-list-tile>
+              <v-divider inset></v-divider>
+
+            </v-list>
+          </v-card>
+        </v-flex>
+      </v-layout>
+
+      <v-layout row justify-center>
+        <v-dialog v-model="dialog" max-width="350px">
+          <v-card>
+            <v-card-title class="headline">Detalles</v-card-title>
+            <center>
+              <img :src="detalles.imagen">
+            </center>
+            <v-card-text>
+              <strong>Nombre</strong> {{detalles.nombre}}
+              <br>
+              <strong>Total:</strong> {{detalles.total}}
+              <br>
+              <strong>
+                <a :href="detalles.url" target="_blank">ir</a>
+              </strong>
+            </v-card-text>
+            <v-card-actions>
+              <v-spacer></v-spacer>
+
+              <v-btn color="green darken-1" flat="flat" @click.native="dialog = false">Cerrar</v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
+      </v-layout>
+    </v-app>
+
+  </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js"></script>
   <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
