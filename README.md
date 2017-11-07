@@ -8,6 +8,11 @@
 
 ![Screenshot](diseno/pantalla-detalles.jpg)
 
+> Enlace
+[https://fernandoserra.github.io/spotify-vue.js/](https://fernandoserra.github.io/spotify-vue.js/)
+
+
+> Contacto
 
 [@fernando_serra](https://twitter.com/fernando_serra)
 

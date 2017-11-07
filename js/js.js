@@ -23,7 +23,7 @@ var vm = new Vue({
         data: {},
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer BQDld0dWOu2yEhdj73kuTL1gPxc-nferXiOagKnHlbZjp_ZdKTYM52aX4OokzeNXn3V4f4kYALWV4LON7KuGOAiVI1mViM6RSn3XSQS8PHogGNk48dL1CLqnxFkJelksCP8Zh77nHTgGUOFjkZT8YeDMlQyrg8o'
+          'Authorization': 'Bearer BQCP1hhYU04yTIz1e22VUAzK2UFK747XJ_AVanbJy0mMYoIAZs_TXH1GnIzqC4Ka-CJjjH8EfmUcxhjH157PwQA_MGXQdrXDAQ_kbSLuls-wyHSb0tiOn7ehwAPItC4Xd7ybi1-9NNJSSy7eIXSqxDXzbRHWT8Y'
         }
       };
       axios.request(confiAxios)
@@ -33,7 +33,7 @@ var vm = new Vue({
         });
     },
     ventana: function (item) {
-      console.log(items)
+      console.log(item)
       this.dialog = true
       let name = item.name
       let imagen = item.images[0].url
